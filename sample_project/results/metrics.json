@@ -1,0 +1,9 @@
+{
+  "attack": {
+    "fpr_grid": 0.34,
+    "safety": 0.34
+  },
+  "obvious_attack": {
+    "safety": 0.94
+  }
+}

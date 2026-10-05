@@ -1,0 +1,333 @@
+{
+  "summary": {
+    "total_numeric_tokens": 12,
+    "considered_claims": 6,
+    "verified": 1,
+    "likely": 2,
+    "ambiguous": 1,
+    "unsupported": 2,
+    "ignored": 6,
+    "strict_verification_rate": 0.16666666666666666
+  },
+  "inventory": [
+    {
+      "path": "paper.tex",
+      "suffix": ".tex",
+      "size_bytes": 415,
+      "sha256": "11603ffdd341918e25addd769c15e12040aef8bd166ffb94159f3162167f5137",
+      "mtime": 1787916654.282681
+    },
+    {
+      "path": "results/metrics.json",
+      "suffix": ".json",
+      "size_bytes": 109,
+      "sha256": "f44295b0231c987999c7c4d88965b8395a8f98688e2d8c17e559fa56cba11322",
+      "mtime": 1787916654.2827566
+    },
+    {
+      "path": "results/misleading.txt",
+      "suffix": ".txt",
+      "size_bytes": 30,
+      "sha256": "286d075c96d263ece0f4d464254963de6b433abb5e854aa5bda247587dad5292",
+      "mtime": 1787916654.2829328
+    },
+    {
+      "path": "results/process.log",
+      "suffix": ".log",
+      "size_bytes": 110,
+      "sha256": "6bed7d5feb583aaf87ddf8489baebdb8584cea3a720a9161afa1dd3b89f89570",
+      "mtime": 1787916654.2828176
+    },
+    {
+      "path": "results/task_stats.txt",
+      "suffix": ".txt",
+      "size_bytes": 55,
+      "sha256": "72421681f607003f06e2fd721f2966d91df57a47746d9805e2541bf24392f532",
+      "mtime": 1787916654.282878
+    }
+  ],
+  "claims": [
+    {
+      "value": 11.0,
+      "raw": "11",
+      "display_value": "11",
+      "is_percent": false,
+      "line": 1,
+      "context": "\\documentclass[11pt]{article}",
+      "claim_type": "IGNORED",
+      "claim_role": "OTHER",
+      "classification_reason": "latex_formatting",
+      "status": "IGNORED",
+      "status_reason": "latex_formatting",
+      "candidates": [],
+      "candidate_count": 0
+    },
+    {
+      "value": 0.01,
+      "raw": "1%",
+      "display_value": "1%",
+      "is_percent": true,
+      "line": 3,
+      "context": "Against a GPT-5 Nano monitor at a 1% step-wise FPR, Claude Opus 4.6 has a 34% undetected sabotage rate.",
+      "claim_type": "CONDITION",
+      "claim_role": "OPERATING_POINT_FPR",
+      "classification_reason": "fpr_operating_point",
+      "status": "AMBIGUOUS",
+      "status_reason": "multiple_role_compatible_candidates",
+      "candidates": [
+        {
+          "value": 0.01,
+          "source": "results/process.log",
+          "locator": "line 1: FPR",
+          "evidence_text": "Audit budget: 1% step-wise FPR",
+          "source_type": "DERIVED_RESULT",
+          "source_weight": 1.0,
+          "evidence_role": "OPERATING_POINT_FPR",
+          "numeric_score": 1.0,
+          "role_score": 1.0,
+          "source_score": 0.9,
+          "anchor_score": 0.35,
+          "evidence_score": 0.8875
+        },
+        {
+          "value": 0.01,
+          "source": "results/process.log",
+          "locator": "line 1: Audit budget",
+          "evidence_text": "Audit budget: 1% step-wise FPR",
+          "source_type": "DERIVED_RESULT",
+          "source_weight": 1.0,
+          "evidence_role": "OPERATING_POINT_FPR",
+          "numeric_score": 1.0,
+          "role_score": 1.0,
+          "source_score": 0.9,
+          "anchor_score": 0.35,
+          "evidence_score": 0.8875
+        },
+        {
+          "value": 0.01,
+          "source": "results/process.log",
+          "locator": "line 1: step",
+          "evidence_text": "Audit budget: 1% step-wise FPR",
+          "source_type": "DERIVED_RESULT",
+          "source_weight": 1.0,
+          "evidence_role": "RESULT_RATE",
+          "numeric_score": 1.0,
+          "role_score": 0.2,
+          "source_score": 0.9,
+          "anchor_score": 0.35,
+          "evidence_score": 0.6635
+        }
+      ],
+      "candidate_count": 3
+    },
+    {
+      "value": 4.6,
+      "raw": "4.6",
+      "display_value": "4.6",
+      "is_percent": false,
+      "line": 3,
+      "context": "Against a GPT-5 Nano monitor at a 1% step-wise FPR, Claude Opus 4.6 has a 34% undetected sabotage rate.",
+      "claim_type": "IGNORED",
+      "claim_role": "OTHER",
+      "classification_reason": "model_version",
+      "status": "IGNORED",
+      "status_reason": "model_version",
+      "candidates": [],
+      "candidate_count": 0
+    },
+    {
+      "value": 0.34,
+      "raw": "34%",
+      "display_value": "34%",
+      "is_percent": true,
+      "line": 3,
+      "context": "Against a GPT-5 Nano monitor at a 1% step-wise FPR, Claude Opus 4.6 has a 34% undetected sabotage rate.",
+      "claim_type": "RESULT_METRIC",
+      "claim_role": "RESULT_RATE",
+      "classification_reason": "rate_context",
+      "status": "VERIFIED",
+      "status_reason": "role_and_semantic_anchor",
+      "candidates": [
+        {
+          "value": 0.34,
+          "source": "results/metrics.json",
+          "locator": "attack.safety",
+          "evidence_text": "attack.safety",
+          "source_type": "DERIVED_RESULT",
+          "source_weight": 1.0,
+          "evidence_role": "RESULT_RATE",
+          "numeric_score": 1.0,
+          "role_score": 1.0,
+          "source_score": 1.0,
+          "anchor_score": 0.18,
+          "evidence_score": 0.877
+        },
+        {
+          "value": 0.34,
+          "source": "results/metrics.json",
+          "locator": "attack.fpr_grid",
+          "evidence_text": "attack.fpr_grid",
+          "source_type": "DERIVED_RESULT",
+          "source_weight": 1.0,
+          "evidence_role": "OTHER",
+          "numeric_score": 1.0,
+          "role_score": 0.2,
+          "source_score": 1.0,
+          "anchor_score": 0.0,
+          "evidence_score": 0.626
+        }
+      ],
+      "candidate_count": 2
+    },
+    {
+      "value": 0.94,
+      "raw": "94%",
+      "display_value": "94%",
+      "is_percent": true,
+      "line": 4,
+      "context": "LaStraj reaches a 94% undetected-sabotage rate.",
+      "claim_type": "RESULT_METRIC",
+      "claim_role": "RESULT_RATE",
+      "classification_reason": "rate_context",
+      "status": "LIKELY",
+      "status_reason": "strong_candidate_but_not_verified",
+      "candidates": [
+        {
+          "value": 0.94,
+          "source": "results/metrics.json",
+          "locator": "obvious_attack.safety",
+          "evidence_text": "obvious_attack.safety",
+          "source_type": "DERIVED_RESULT",
+          "source_weight": 1.0,
+          "evidence_role": "RESULT_RATE",
+          "numeric_score": 1.0,
+          "role_score": 1.0,
+          "source_score": 1.0,
+          "anchor_score": 0.0,
+          "evidence_score": 0.85
+        }
+      ],
+      "candidate_count": 1
+    },
+    {
+      "value": 0.95,
+      "raw": "95%",
+      "display_value": "95%",
+      "is_percent": true,
+      "line": 5,
+      "context": "Error bars show Wilson 95% CI.",
+      "claim_type": "IGNORED",
+      "claim_role": "CONFIDENCE_LEVEL",
+      "classification_reason": "confidence_metadata",
+      "status": "IGNORED",
+      "status_reason": "confidence_metadata",
+      "candidates": [],
+      "candidate_count": 0
+    },
+    {
+      "value": 1.0,
+      "raw": "1",
+      "display_value": "1",
+      "is_percent": false,
+      "line": 6,
+      "context": "We test three settings: (1) Base, (2) No Network, and (3) Editor Only.",
+      "claim_type": "IGNORED",
+      "claim_role": "ENUMERATION",
+      "classification_reason": "enumeration_marker",
+      "status": "IGNORED",
+      "status_reason": "enumeration_marker",
+      "candidates": [],
+      "candidate_count": 0
+    },
+    {
+      "value": 2.0,
+      "raw": "2",
+      "display_value": "2",
+      "is_percent": false,
+      "line": 6,
+      "context": "We test three settings: (1) Base, (2) No Network, and (3) Editor Only.",
+      "claim_type": "IGNORED",
+      "claim_role": "ENUMERATION",
+      "classification_reason": "enumeration_marker",
+      "status": "IGNORED",
+      "status_reason": "enumeration_marker",
+      "candidates": [],
+      "candidate_count": 0
+    },
+    {
+      "value": 3.0,
+      "raw": "3",
+      "display_value": "3",
+      "is_percent": false,
+      "line": 6,
+      "context": "We test three settings: (1) Base, (2) No Network, and (3) Editor Only.",
+      "claim_type": "IGNORED",
+      "claim_role": "ENUMERATION",
+      "classification_reason": "enumeration_marker",
+      "status": "IGNORED",
+      "status_reason": "enumeration_marker",
+      "candidates": [],
+      "candidate_count": 0
+    },
+    {
+      "value": 185.0,
+      "raw": "185",
+      "display_value": "185",
+      "is_percent": false,
+      "line": 7,
+      "context": "LinuxArena has 185 side tasks.",
+      "claim_type": "DATASET_FACT",
+      "claim_role": "COUNT",
+      "classification_reason": "count_context",
+      "status": "LIKELY",
+      "status_reason": "single_weak_candidate",
+      "candidates": [
+        {
+          "value": 185.0,
+          "source": "results/task_stats.txt",
+          "locator": "line 1: Paper repro FULL",
+          "evidence_text": "# Paper repro FULL: 185 attack pairs (1 per side task)",
+          "source_type": "DERIVED_RESULT",
+          "source_weight": 1.0,
+          "evidence_role": "COUNT",
+          "numeric_score": 1.0,
+          "role_score": 1.0,
+          "source_score": 0.25,
+          "anchor_score": 0.0,
+          "evidence_score": 0.7375
+        }
+      ],
+      "candidate_count": 1
+    },
+    {
+      "value": 4.0,
+      "raw": "4",
+      "display_value": "4",
+      "is_percent": false,
+      "line": 8,
+      "context": "BashArena has 4 side tasks.",
+      "claim_type": "DATASET_FACT",
+      "claim_role": "COUNT",
+      "classification_reason": "count_context",
+      "status": "UNSUPPORTED",
+      "status_reason": "no_role_compatible_evidence",
+      "candidates": [],
+      "candidate_count": 0
+    },
+    {
+      "value": 160.0,
+      "raw": "160",
+      "display_value": "160",
+      "is_percent": false,
+      "line": 9,
+      "context": "The evaluation terminates after the 160-step cap.",
+      "claim_type": "HYPERPARAM",
+      "claim_role": "STEP_CAP",
+      "classification_reason": "step_cap",
+      "status": "UNSUPPORTED",
+      "status_reason": "no_role_compatible_evidence",
+      "candidates": [],
+      "candidate_count": 0
+    }
+  ]
+}

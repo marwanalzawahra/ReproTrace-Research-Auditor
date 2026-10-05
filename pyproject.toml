@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reprotrace"
+version = "0.3.0"
+description = "Role-aware local-first scientific claim provenance auditor."
+requires-python = ">=3.10"
+dependencies = ["typer>=0.12"]
+
+[project.scripts]
+reprotrace = "reprotrace.cli:app"
+raudit = "reprotrace.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["reprotrace*"]
